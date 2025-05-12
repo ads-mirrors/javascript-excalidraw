@@ -16,7 +16,7 @@ import {
   arrayToMap,
   getSizeFromPoints,
   normalizeLink,
-  getLineHeight,
+  DEFAULT_LINE_HEIGHT,
 } from "@excalidraw/common";
 import { getNonDeletedElements } from "@excalidraw/element";
 import { normalizeFixedPoint } from "@excalidraw/element";
@@ -274,7 +274,7 @@ const restoreElement = (
             detectLineHeight(element)
           : // no element height likely means programmatic use, so default
             // to a fixed line height
-            getLineHeight(element.fontFamily));
+            DEFAULT_LINE_HEIGHT);
       element = restoreElementWithProperties(element, {
         fontSize,
         fontFamily,

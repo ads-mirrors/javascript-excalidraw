@@ -1,5 +1,6 @@
 import type {
   ExcalidrawElement,
+  ExcalidrawTextElement,
   FontFamilyValues,
 } from "@excalidraw/element/types";
 import type { AppProps, AppState } from "@excalidraw/excalidraw/types";
@@ -185,6 +186,7 @@ export const FRAME_STYLE = {
 
 export const MIN_FONT_SIZE = 1;
 export const DEFAULT_FONT_SIZE = 20;
+export const DEFAULT_LINE_HEIGHT = 1.25 as ExcalidrawTextElement["lineHeight"];
 export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY.Excalifont;
 export const DEFAULT_TEXT_ALIGN = "left";
 export const DEFAULT_VERTICAL_ALIGN = "top";

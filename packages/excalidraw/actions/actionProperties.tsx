@@ -19,8 +19,8 @@ import {
   getFontFamilyString,
   getShortcutKey,
   tupleToCoors,
-  getLineHeight,
   reduceToCommonValue,
+  DEFAULT_LINE_HEIGHT,
 } from "@excalidraw/common";
 
 import { getNonDeletedElements } from "@excalidraw/element";
@@ -903,7 +903,7 @@ export const actionChangeFontFamily = register({
                 oldElement,
                 {
                   fontFamily: nextFontFamily,
-                  lineHeight: getLineHeight(nextFontFamily!),
+                  lineHeight: DEFAULT_LINE_HEIGHT,
                 },
               );
 

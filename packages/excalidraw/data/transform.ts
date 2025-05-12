@@ -13,7 +13,7 @@ import {
   getFontString,
   isDevEnv,
   toBrandedType,
-  getLineHeight,
+  DEFAULT_LINE_HEIGHT,
 } from "@excalidraw/common";
 
 import { bindLinearElement } from "@excalidraw/element";
@@ -578,7 +578,7 @@ export const convertToExcalidrawElements = (
       case "text": {
         const fontFamily = element?.fontFamily || DEFAULT_FONT_FAMILY;
         const fontSize = element?.fontSize || DEFAULT_FONT_SIZE;
-        const lineHeight = element?.lineHeight || getLineHeight(fontFamily);
+        const lineHeight = element?.lineHeight || DEFAULT_LINE_HEIGHT;
         const text = element.text ?? "";
         const normalizedText = normalizeText(text);
         const metrics = measureText(

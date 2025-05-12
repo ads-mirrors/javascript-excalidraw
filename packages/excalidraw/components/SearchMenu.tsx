@@ -5,10 +5,10 @@ import { Fragment, memo, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   CLASSES,
+  DEFAULT_LINE_HEIGHT,
   EVENT,
   FONT_FAMILY,
   FRAME_STYLE,
-  getLineHeight,
 } from "@excalidraw/common";
 
 import { isElementCompletelyInViewport } from "@excalidraw/element";
@@ -750,7 +750,7 @@ const getMatchInFrame = (
     fontFamily: FONT_FAMILY.Assistant,
   });
 
-  const lineHeight = getLineHeight(FONT_FAMILY.Assistant);
+  const lineHeight = DEFAULT_LINE_HEIGHT;
 
   const offset = measureText(prefixText, font, lineHeight);
 

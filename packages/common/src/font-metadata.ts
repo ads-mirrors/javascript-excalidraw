@@ -1,7 +1,4 @@
-import type {
-  ExcalidrawTextElement,
-  FontFamilyValues,
-} from "@excalidraw/element/types";
+import type { ExcalidrawTextElement } from "@excalidraw/element/types";
 
 import { FONT_FAMILY, FONT_FAMILY_FALLBACKS } from "./constants";
 
@@ -17,8 +14,6 @@ export interface FontMetadata {
     ascender: number;
     /** hhea.descender metric */
     descender: number;
-    /** harcoded unitless line-height, https://github.com/excalidraw/excalidraw/pull/6360#issuecomment-1477635971 */
-    lineHeight: number;
   };
   /** flag to indicate a deprecated font */
   deprecated?: true;
@@ -38,7 +33,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 886,
       descender: -374,
-      lineHeight: 1.25,
     },
   },
   [FONT_FAMILY.Nunito]: {
@@ -46,7 +40,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 1011,
       descender: -353,
-      lineHeight: 1.35,
     },
   },
   [FONT_FAMILY["Lilita One"]]: {
@@ -54,7 +47,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 923,
       descender: -220,
-      lineHeight: 1.15,
     },
   },
   [FONT_FAMILY["Comic Shanns"]]: {
@@ -62,7 +54,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 750,
       descender: -250,
-      lineHeight: 1.25,
     },
   },
   [FONT_FAMILY.Virgil]: {
@@ -70,7 +61,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 886,
       descender: -374,
-      lineHeight: 1.25,
     },
     deprecated: true,
   },
@@ -79,7 +69,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 2048,
       ascender: 1577,
       descender: -471,
-      lineHeight: 1.15,
     },
     deprecated: true,
     local: true,
@@ -89,7 +78,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 2048,
       ascender: 1900,
       descender: -480,
-      lineHeight: 1.2,
     },
     deprecated: true,
   },
@@ -98,7 +86,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 2048,
       ascender: 1854,
       descender: -434,
-      lineHeight: 1.15,
     },
     private: true,
   },
@@ -107,7 +94,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 2048,
       ascender: 1021,
       descender: -287,
-      lineHeight: 1.25,
     },
     private: true,
   },
@@ -116,7 +102,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 880,
       descender: -144,
-      lineHeight: 1.15,
     },
     fallback: true,
   },
@@ -126,7 +111,6 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
       unitsPerEm: 1000,
       ascender: 886,
       descender: -374,
-      lineHeight: 1.25,
     },
     local: true,
     fallback: true,
@@ -167,15 +151,4 @@ export const getVerticalOffset = (
 
   const verticalOffset = fontSizeEm * ascender + lineGap;
   return verticalOffset;
-};
-
-/**
- * Gets line height for a selected family.
- */
-export const getLineHeight = (fontFamily: FontFamilyValues) => {
-  const { lineHeight } =
-    FONT_METADATA[fontFamily]?.metrics ||
-    FONT_METADATA[FONT_FAMILY.Excalifont].metrics;
-
-  return lineHeight as ExcalidrawTextElement["lineHeight"];
 };

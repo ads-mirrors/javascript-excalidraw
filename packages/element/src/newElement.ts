@@ -2,6 +2,7 @@ import {
   DEFAULT_ELEMENT_PROPS,
   DEFAULT_FONT_FAMILY,
   DEFAULT_FONT_SIZE,
+  DEFAULT_LINE_HEIGHT,
   DEFAULT_TEXT_ALIGN,
   DEFAULT_VERTICAL_ALIGN,
   VERTICAL_ALIGN,
@@ -9,7 +10,6 @@ import {
   randomId,
   getFontString,
   getUpdatedTimestamp,
-  getLineHeight,
 } from "@excalidraw/common";
 
 import type { Radians } from "@excalidraw/math";
@@ -248,7 +248,7 @@ export const newTextElement = (
 ): NonDeleted<ExcalidrawTextElement> => {
   const fontFamily = opts.fontFamily || DEFAULT_FONT_FAMILY;
   const fontSize = opts.fontSize || DEFAULT_FONT_SIZE;
-  const lineHeight = opts.lineHeight || getLineHeight(fontFamily);
+  const lineHeight = opts.lineHeight || DEFAULT_LINE_HEIGHT;
   const text = normalizeText(opts.text);
   const metrics = measureText(
     text,

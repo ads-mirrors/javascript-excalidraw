@@ -2,9 +2,9 @@ import {
   DEFAULT_FONT_SIZE,
   DEFAULT_FONT_FAMILY,
   DEFAULT_TEXT_ALIGN,
+  DEFAULT_LINE_HEIGHT,
   CODES,
   KEYS,
-  getLineHeight,
 } from "@excalidraw/common";
 
 import { newElementWith } from "@excalidraw/element";
@@ -129,7 +129,7 @@ export const actionPasteStyles = register({
                 DEFAULT_TEXT_ALIGN,
               lineHeight:
                 (elementStylesToCopyFrom as ExcalidrawTextElement).lineHeight ||
-                getLineHeight(fontFamily),
+                DEFAULT_LINE_HEIGHT,
             });
             let container = null;
             if (newElement.containerId) {

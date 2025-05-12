@@ -71,7 +71,6 @@ import {
   normalizeLink,
   toValidURL,
   getGridPoint,
-  getLineHeight,
   debounce,
   distance,
   getFontString,
@@ -102,6 +101,7 @@ import {
   randomInteger,
   CLASSES,
   Emitter,
+  DEFAULT_LINE_HEIGHT,
 } from "@excalidraw/common";
 
 import { getCommonBounds, getElementAbsoluteCoords } from "@excalidraw/element";
@@ -3540,7 +3540,7 @@ class App extends React.Component<AppProps, AppState> {
       fontSize: textElementProps.fontSize,
       fontFamily: textElementProps.fontFamily,
     });
-    const lineHeight = getLineHeight(textElementProps.fontFamily);
+    const lineHeight = DEFAULT_LINE_HEIGHT;
     const [x1, , x2] = getVisibleSceneBounds(this.state);
     // long texts should not go beyond 800 pixels in width nor should it go below 200 px
     const maxTextWidth = Math.max(Math.min((x2 - x1) * 0.5, 800), 200);
@@ -5363,8 +5363,7 @@ class App extends React.Component<AppProps, AppState> {
     const fontFamily =
       existingTextElement?.fontFamily || this.state.currentItemFontFamily;
 
-    const lineHeight =
-      existingTextElement?.lineHeight || getLineHeight(fontFamily);
+    const lineHeight = existingTextElement?.lineHeight || DEFAULT_LINE_HEIGHT;
     const fontSize = this.state.currentItemFontSize;
 
     if (

@@ -3,7 +3,7 @@ import { vi } from "vitest";
 
 import { getLineHeightInPx } from "@excalidraw/element";
 
-import { KEYS, arrayToMap, getLineHeight } from "@excalidraw/common";
+import { DEFAULT_LINE_HEIGHT, KEYS, arrayToMap } from "@excalidraw/common";
 
 import { getElementBounds } from "@excalidraw/element";
 
@@ -152,10 +152,7 @@ describe("paste text as single lines", () => {
 
     const text = "hkhkjhki\njgkjhffjh\njgkjhffjh";
     const lineHeightPx =
-      getLineHeightInPx(
-        h.app.state.currentItemFontSize,
-        getLineHeight(h.state.currentItemFontFamily),
-      ) +
+      getLineHeightInPx(h.app.state.currentItemFontSize, DEFAULT_LINE_HEIGHT) +
       10 / h.app.state.zoom.value;
     mouse.moveTo(100, 100);
     pasteWithCtrlCmdV(text);
@@ -174,10 +171,7 @@ describe("paste text as single lines", () => {
     const elementsMap = arrayToMap(h.elements);
     const text = "hkhkjhki\n\njgkjhffjh";
     const lineHeightPx =
-      getLineHeightInPx(
-        h.app.state.currentItemFontSize,
-        getLineHeight(h.state.currentItemFontFamily),
-      ) +
+      getLineHeightInPx(h.app.state.currentItemFontSize, DEFAULT_LINE_HEIGHT) +
       10 / h.app.state.zoom.value;
     mouse.moveTo(100, 100);
     pasteWithCtrlCmdV(text);

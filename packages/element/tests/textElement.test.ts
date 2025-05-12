@@ -1,7 +1,4 @@
-import { getLineHeight } from "@excalidraw/common";
 import { API } from "@excalidraw/excalidraw/tests/helpers/api";
-
-import { FONT_FAMILY } from "@excalidraw/common";
 
 import {
   computeContainerDimensionForBoundText,
@@ -189,21 +186,5 @@ describe("Test getLineHeightInPx", () => {
     expect(
       getLineHeightInPx(textElement.fontSize, textElement.lineHeight),
     ).toBe(25);
-  });
-});
-
-describe("Test getDefaultLineHeight", () => {
-  it("should return line height using default font family when not passed", () => {
-    //@ts-ignore
-    expect(getLineHeight()).toBe(1.25);
-  });
-
-  it("should return line height using default font family for unknown font", () => {
-    const UNKNOWN_FONT = 5;
-    expect(getLineHeight(UNKNOWN_FONT)).toBe(1.25);
-  });
-
-  it("should return correct line height", () => {
-    expect(getLineHeight(FONT_FAMILY.Cascadia)).toBe(1.2);
   });
 });

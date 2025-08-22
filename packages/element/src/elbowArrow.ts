@@ -360,9 +360,10 @@ const handleSegmentRelease = (
   );
 
   if (!restoredPoints || restoredPoints.length < 2) {
-    throw new Error(
+    console.error(
       "Property 'points' is required in the update returned by normalizeArrowElementUpdate()",
     );
+    return {};
   }
 
   const nextPoints: GlobalPoint[] = [];
@@ -751,9 +752,10 @@ const handleEndpointDrag = (
     const thirdPoint = globalUpdatedPoints.at(startIsSpecial ? 3 : 2);
 
     if (!secondPoint || !thirdPoint) {
-      throw new Error(
+      console.error(
         `Second and third points must exist when handling endpoint drag (${startIsSpecial})`,
       );
+      return {};
     }
 
     const startIsHorizontal = headingIsHorizontal(startHeading);
@@ -822,9 +824,10 @@ const handleEndpointDrag = (
     );
 
     if (!secondToLastPoint || !thirdToLastPoint) {
-      throw new Error(
+      console.error(
         `Second and third to last points must exist when handling endpoint drag (${endIsSpecial})`,
       );
+      return {};
     }
 
     const endIsHorizontal = headingIsHorizontal(endHeading);

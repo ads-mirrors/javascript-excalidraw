@@ -172,8 +172,8 @@
     "wrapSelectionInFrame": "Selectie omslaan in frame",
     "tab": "Tab",
     "shapeSwitch": "Verander vorm",
-    "preferences": "",
-    "preferences_toolLock": ""
+    "preferences": "Voorkeuren",
+    "preferences_toolLock": "Tool vergrendelen"
   },
   "elementLink": {
     "title": "Link naar object",
@@ -559,9 +559,9 @@
   },
   "welcomeScreen": {
     "app": {
-      "center_heading": "",
-      "center_heading_line2": "",
-      "center_heading_line3": "",
+      "center_heading": "Je tekeningen worden bewaard in de opslag van je browser.",
+      "center_heading_line2": "Browser opslag kan onverwacht gewist worden.",
+      "center_heading_line3": "Sla je werk regelmatig op in een bestand om te voorkomen dat je het kwijtraakt.",
       "center_heading_plus": "Wil je in plaats daarvan naar Excalidraw+ gaan?",
       "menuHint": "Exporteren, voorkeuren en meer, ..."
     },
@@ -626,7 +626,7 @@
   "chat": {
     "inputPlaceholder": "Begin je diagram idee hier in te typen... ({{shortcut}} voor een nieuwe lijn)",
     "inputPlaceholderWithMessages": "Ga door met het verfijnen van je diagram...",
-    "generating": "",
+    "generating": "Genereren...",
     "rateLimitRemaining": "{{count}} verzoeken over vandaag",
     "role": {
       "user": "Jij",
@@ -657,7 +657,7 @@
       "aiRepair": "Opnieuw genereren (automatisch repareren) →",
       "requestAborted": "Verzoek gestopt",
       "requestFailed": "Verzoek mislukt",
-      "mermaidParseError": ""
+      "mermaidParseError": "Mermaid syntax fout"
     },
     "rateLimit": {
       "messageLimit": "Je hebt je AI limiet bereikt op het gratis abonnement. Probeer Excalidraw+ uit voor meer of kom morgen terug.",

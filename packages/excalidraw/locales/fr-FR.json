@@ -172,8 +172,8 @@
     "wrapSelectionInFrame": "Mettre la sélection dans un cadre",
     "tab": "Onglet",
     "shapeSwitch": "Changer de forme",
-    "preferences": "",
-    "preferences_toolLock": ""
+    "preferences": "Préférences",
+    "preferences_toolLock": "Verrouillage de l'outil"
   },
   "elementLink": {
     "title": "Lien vers un objet",
